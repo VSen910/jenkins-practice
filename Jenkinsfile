@@ -5,7 +5,7 @@ pipeline {
         stage('Build') {
             agent {
                 docker {
-                    image 'fischerscode/flutter'
+                    image 'cirrusci/flutter'
                     reuseNode true
                 }
             }
@@ -22,7 +22,7 @@ pipeline {
         stage('Test') {
             agent {
                 docker {
-                    image 'fischerscode/flutter'
+                    image 'cirrusci/flutter'
                     reuseNode true
                 }
             }
