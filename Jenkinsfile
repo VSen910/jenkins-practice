@@ -11,6 +11,7 @@ pipeline {
             }
             steps {
                 sh '''
+                    git config --global --add safe.directory /sdks/flutter
                     flutter --version
                     dart --version
                     flutter pub get
