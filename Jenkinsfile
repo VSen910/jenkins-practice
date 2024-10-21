@@ -5,13 +5,12 @@ pipeline {
         stage('Build') {
             agent {
                 docker {
-                    image 'cirrusci/flutter'
+                    image 'instrumentisto/flutter'
                     reuseNode true
                 }
             }
             steps {
                 sh '''
-                    git config --global --add safe.directory /sdks/flutter
                     flutter --version
                     dart --version
                     flutter pub get
@@ -23,7 +22,7 @@ pipeline {
         stage('Test') {
             agent {
                 docker {
-                    image 'cirrusci/flutter'
+                    image 'instrumentisto/flutter'
                     reuseNode true
                 }
             }
