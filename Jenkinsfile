@@ -2,13 +2,13 @@ pipeline {
     agent any
 
     stages {
-        agent {
-            docker {
-                image 'fischerscode/flutter'
-                reuseNode true
-            }
-        }
         stage('Build') {
+            agent {
+                docker {
+                    image 'fischerscode/flutter'
+                    reuseNode true
+                }
+            }
             steps {
                 sh '''
                     flutter --version
